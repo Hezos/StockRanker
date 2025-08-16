@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "jdkR7XdBLo122AAJwVRK7CEIqjfrRrs7BZ0XTFpfQIbiH4JuB02e5+6O9iKOXW5P+iids6yqa2l0flchlX0low==",
+  "dgSpecHash": "JXIzZU9/Lth9zlNOrakepvc23lhXqH+kefsPZv6HtpqjeiaFNBNu+OUYR1REwwxeAhFkmszaEVpgHUFdZukrtg==",
   "success": true,
-  "projectFilePath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker/StockRanker.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker.csproj",
+  "expectedPackageFiles": [
+    "/home/ubuntu/.nuget/packages/system.io.pipelines/9.0.8/system.io.pipelines.9.0.8.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/system.text.encodings.web/9.0.8/system.text.encodings.web.9.0.8.nupkg.sha512",
+    "/home/ubuntu/.nuget/packages/system.text.json/9.0.8/system.text.json.9.0.8.nupkg.sha512"
+  ],
   "logs": []
 }
