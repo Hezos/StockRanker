@@ -24,5 +24,11 @@ namespace StockRanker
 			Rank = 0;
 		}
 
+		public StockInfo(string ticker, int rank)
+		{
+			Ticker = ticker;
+
+			Rank = rank;
+		}
 	}
 }

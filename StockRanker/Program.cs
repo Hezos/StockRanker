@@ -2,10 +2,14 @@
 using System.Text.Json;
 using StockRanker;
 
-internal class Program
+namespace StockRanker
+{
+
+    internal class Program
 {
     private static void Main()
     {
+        bool run = true;
         List<StockInfo> infos = [];
         string data = "";
         string filename = "stocks.json";
@@ -19,13 +23,33 @@ internal class Program
             infos = JsonSerializer.Deserialize<List<StockInfo>>(data)!;
         }
 
-        while(true)
+        while(run)
         {
-            ModifyStock(infos);
+            Console.WriteLine("What do you want to do? \n 0 - list stocks. \n 1 - add stock \n 2 - modify stock  \n 3 - quit");
+            int menu = Convert.ToInt32(Console.ReadLine());
+            switch(menu)
+            {
+                case 0:
+                    ListStock(infos);
+                    break;
+                case 1:
+                    AddStock(ref infos);
+                    break;
+                case 2:
+                    ModifyStock(ref infos);
+                    break;
+                case 3:
+                    run = false;
+                    break;
+                default:
+                    break;
+
+            }
+            
         }
     }
 
-    public static void ModifyStock(List<StockInfo> infos)
+    public static void ModifyStock(ref List<StockInfo> infos)
     {
         Console.Clear();
         Console.WriteLine("Stocks and ranks:");
@@ -57,4 +81,40 @@ internal class Program
         File.WriteAllText("stocks.json", fileData);
         Console.WriteLine("Changes were saved.");
     }
+
+    public static void AddStock(ref List<StockInfo> infos)
+    {
+        Console.Clear();
+        System.Console.WriteLine("Name of the stock:");
+        string name = Console.ReadLine()!;
+        System.Console.WriteLine("Would you like to add a rank to the stock? \n y/n");
+        string addRank = Console.ReadLine()!;
+        int rank = 0;
+        if(addRank == "n")
+        {
+            rank = infos.Count;
+        }
+        else
+        {
+            System.Console.WriteLine("Type the rank here:");
+            rank = Convert.ToInt32(Console.ReadLine());
+        }
+        StockInfo info = new StockInfo(name, rank);
+        infos.Add(info);
+
+        string fileData = JsonSerializer.Serialize(infos);
+        File.WriteAllText("stocks.json", fileData);
+        Console.WriteLine("Changes were saved.");
+    }
+
+    public static void ListStock(List<StockInfo> infos)
+    {
+        Console.Clear();
+        foreach (var info in infos)
+        {
+            Console.WriteLine(info);
+        }
+    }
+}
+
 }
