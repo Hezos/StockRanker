@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StockRanker
-build_property.ProjectDir = /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/
+build_property.ProjectDir = /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

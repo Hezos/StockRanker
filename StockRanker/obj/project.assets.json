@@ -206,11 +206,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker.csproj",
+      "projectUniqueName": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker/StockRanker.csproj",
       "projectName": "StockRanker",
-      "projectPath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker.csproj",
+      "projectPath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker/StockRanker.csproj",
       "packagesPath": "/home/ubuntu/.nuget/packages/",
-      "outputPath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/obj/",
+      "outputPath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/StockRanker/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/ubuntu/.nuget/NuGet/NuGet.Config"

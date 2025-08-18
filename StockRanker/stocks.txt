@@ -1,1 +1,0 @@
-[{"Ticker": "830", "Rank": 1},{"Ticker": "2030", "Rank": 1},{"Ticker": "709", "Rank": 1}]

@@ -14,7 +14,7 @@ namespace StockRanker
 
 		public override string ToString()
 		{
-			return $"{Ticker},{Rank}";
+			return $"{Ticker},	{Rank}.";
 		}
 
 		public StockInfo()
