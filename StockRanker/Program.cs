@@ -25,7 +25,7 @@ namespace StockRanker
 
             while(run)
             {
-                Console.WriteLine("What do you want to do? \n 0 - list stocks. \n 1 - add stock \n 2 - modify stock  \n 3 - quit");
+                Console.WriteLine("What do you want to do? \n 0 - list stocks. \n 1 - add stock \n 2 - modify stock \n 3 - delete stock \n 4 - quit");
                 int menu = Convert.ToInt32(Console.ReadLine());
                 switch(menu)
                 {
@@ -39,6 +39,9 @@ namespace StockRanker
                         ModifyStock(ref infos);
                         break;
                     case 3:
+                        DeleteStock(ref infos);
+                        break;
+                    case 4:
                         run = false;
                         break;
                     default:
@@ -52,10 +55,7 @@ namespace StockRanker
         {
             Console.Clear();
             Console.WriteLine("Stocks and ranks:");
-            foreach (var info in infos)
-            {
-                Console.WriteLine(info);
-            }
+            ListStock(infos);
 
             Console.WriteLine("Write a ticker to modify!");
             string tickerName = Console.ReadLine()!;
@@ -71,10 +71,7 @@ namespace StockRanker
             selectedInfo.Rank = givenRank;
 
             Console.WriteLine("Modified stock rank");
-            foreach (var info in infos)
-            {
-                Console.WriteLine(info);
-            }
+            ListStock(infos);
 
             string fileData = JsonSerializer.Serialize(infos);
             File.WriteAllText("stocks.json", fileData);
@@ -114,6 +111,16 @@ namespace StockRanker
             {
                 Console.WriteLine(info);
             }
+        }
+
+        public static void DeleteStock(ref List<StockInfo> infos)
+        {
+            Console.Clear();
+            Console.WriteLine("Stocks and ranks:");
+            ListStock(infos);
+            Console.WriteLine("Write a ticker to delete!");
+            string tickerName = Console.ReadLine()!;
+            infos.RemoveAll(info => info.Ticker == tickerName);
         }
     }
 
