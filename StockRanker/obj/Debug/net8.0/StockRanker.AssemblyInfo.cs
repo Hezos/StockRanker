@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StockRanker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+155a12127455cbbe9464b95e762ff53957c6af19")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee6331056738aefa9b1329656773826c13713864")]
 [assembly: System.Reflection.AssemblyProductAttribute("StockRanker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StockRanker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
