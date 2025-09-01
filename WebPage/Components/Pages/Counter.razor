@@ -1,0 +1,126 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<PageTitle>Counter</PageTitle>
+
+<h1>List of stocks</h1>
+
+@foreach(var item in infos)
+{
+    <div class="d-flex flex-row border border-primary">
+        <div style="width: 50%;" class="justify-content-start">
+                <p>
+                    @item.Ticker
+                </p>
+                <p>
+                    @item.Rank
+                </p>
+        </div>
+        <div style="width: 50%;" class="d-flex justify-content-end">
+            <div class="d-flex flex-column">
+                <button  @onclick="@(e => ModifyStock(e, item.Ticker, item.Rank, 1))" class="d-block align-items-center">
+                    <span class="glyphicon">&#xe113;</span>
+                </button>
+                <br/>
+                <button  @onclick="@(e => ModifyStock(e, item.Ticker, item.Rank, -1))" class="d-block align-items-center">
+                    <span class="glyphicon">&#xe114;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+       
+}
+
+<h1>Add stock</h1>
+<p>Stock name:</p>
+<InputText @bind-Value="tickerName"/>
+<p></p>
+<button class="btn btn-primary" @onclick="AddStock">Add stock</button>
+<h1>Remove stock</h1>
+<p>Stock name:</p>
+<InputText @bind-Value="tickerName"/>
+<p></p>
+<button class="btn btn-primary" @onclick="DeleteStock">Remove stock</button>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    string tickerName = "";
+
+    private int currentCount = 0;
+
+    List<StockInfo> infos = [];
+    string data = "";
+    string filename = "Components/Pages/stocks.json";
+
+    public void ReadFile()
+    {
+        if (!File.Exists(filename))
+        {
+            Console.WriteLine("File was not found.");
+        }
+        else
+        {
+            data = File.ReadAllText("Components/Pages/stocks.json");
+            infos = JsonSerializer.Deserialize<List<StockInfo>>(data)!;
+            OrderStocks(ref infos);
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    public void OrderStocks(ref List<StockInfo> infos)
+    {
+        IEnumerable<StockInfo> showInfos = from info in infos orderby info.Rank ascending select info;
+        infos = showInfos.ToList();
+    }
+
+    public void AddStock()
+        {
+            int rank = infos.Count;
+            Console.WriteLine(tickerName);
+            StockInfo info = new StockInfo(tickerName, rank);
+            infos.Add(info);
+            string fileData = JsonSerializer.Serialize(infos);
+            File.WriteAllText("Components/Pages/stocks.json", fileData);
+        }
+
+    public void DeleteStock()
+        {
+            infos.RemoveAll(info => info.Ticker == tickerName);
+            string fileData = JsonSerializer.Serialize(infos);
+            File.WriteAllText("Components/Pages/stocks.json", fileData);
+        }
+    public void ModifyStock(MouseEventArgs e, string TickerName, int originalRank, int movement)
+        {
+            Console.WriteLine("Clicked Button");
+            StockInfo selectedInfo = infos.Where(info => info.Ticker == TickerName).FirstOrDefault()!;
+            StockInfo neighbour = infos.Where(info => info.Rank == selectedInfo.Rank + movement).FirstOrDefault()!;
+            foreach (var info in infos.Where(info => info.Rank == originalRank))
+            {
+                info.Rank += movement;
+            }
+            if(infos.Where(info => info.Ticker == neighbour.Ticker) is not null)
+            {
+                foreach (var info in infos.Where(info => info.Ticker == neighbour.Ticker))
+                {
+                    info.Rank -= movement;
+                }
+            }
+            string fileData = JsonSerializer.Serialize(infos);
+            File.WriteAllText("Components/Pages/stocks.json", fileData);
+        }
+    protected override void OnInitialized()
+    {
+        ReadFile();
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/obj/Debug/net8.0/scopedcss/projectbundle/WebPage.bundle.scp.css",
+      "PackagePath": "staticwebassets/WebPage.bundle.scp.css"
+    },
+    {
+      "Id": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.WebPage.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.WebPage.props",
+      "PackagePath": "build\\WebPage.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.WebPage.props",
+      "PackagePath": "buildMultiTargeting\\WebPage.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.WebPage.props",
+      "PackagePath": "buildTransitive\\WebPage.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

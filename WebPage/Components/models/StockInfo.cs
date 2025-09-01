@@ -1,0 +1,33 @@
+
+using System.Text.Json.Serialization;
+
+namespace WebPage
+{
+	public class StockInfo
+	{
+		[JsonPropertyName("Ticker")]
+		public string Ticker { get; set; }
+
+		[JsonPropertyName("Rank")]
+		public int Rank { get; set; }
+
+		public override string ToString()
+		{
+			return $"{Ticker},	{Rank}.";
+		}
+
+		public StockInfo()
+		{
+			Ticker = "";
+
+			Rank = 0;
+		}
+
+		public StockInfo(string ticker, int rank)
+		{
+			Ticker = ticker;
+
+			Rank = rank;
+		}
+	}
+}
