@@ -10,11 +10,11 @@
         "projectUniqueName": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/WebPage.csproj",
         "projectName": "WebPage",
         "projectPath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/WebPage.csproj",
-        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "packagesPath": "/root/.nuget/packages/",
         "outputPath": "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
