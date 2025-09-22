@@ -27,7 +27,6 @@
 /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/obj/Debug/net8.0/WebPage.pdb
 /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/obj/Debug/net8.0/WebPage.genruntimeconfig.cache
 /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/obj/Debug/net8.0/ref/WebPage.dll
-/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/bin/Debug/net8.0/Components/Pages/stocks.json
 /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/obj/Debug/net8.0/WebPage.csproj.AssemblyReference.cache
 /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/bin/Debug/net8.0/System.IO.Pipelines.dll
 /media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/WebPage/bin/Debug/net8.0/System.Text.Encodings.Web.dll

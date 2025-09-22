@@ -12,14 +12,14 @@ namespace StockRanker
             bool run = true;
             List<StockInfo> infos = [];
             string data = "";
-            string filename = "stocks.json";
+            string filename = "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/stocks.json";
             if (!File.Exists(filename))
             {
                 Console.WriteLine("File was not found.");
             }
             else
             {
-                data = File.ReadAllText("stocks.json");
+                data = File.ReadAllText(filename);
                 infos = JsonSerializer.Deserialize<List<StockInfo>>(data)!;
             }
 

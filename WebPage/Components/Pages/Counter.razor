@@ -57,8 +57,9 @@
 
     List<StockInfo> infos = [];
     string data = "";
-    string filename = "Components/Pages/stocks.json";
 
+    string filename = "/media/ubuntu/QuestionMark/Projects/StockRanker/StockRanker/stocks.json";
+    //string filename = "../stocks.json";
     public void ReadFile()
     {
         if (!File.Exists(filename))
@@ -67,7 +68,7 @@
         }
         else
         {
-            data = File.ReadAllText("Components/Pages/stocks.json");
+            data = File.ReadAllText(filename);
             infos = JsonSerializer.Deserialize<List<StockInfo>>(data)!;
             OrderStocks(ref infos);
         }
